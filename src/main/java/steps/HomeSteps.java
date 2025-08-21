@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class HomeSteps {
     HomePage mainPage = new HomePage();
 
-    public HomeSteps openMainPage() {
+    public HomeSteps openHomePage() {
         open(Constants.TBC_URL);
         return this;
     }
