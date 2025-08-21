@@ -1,5 +1,6 @@
 package tests;
 
+import data.Constants;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import runners.BaseTest;
@@ -17,7 +18,7 @@ public class LocationFilterTest extends BaseTest {
     public void varifyLocationFilterTest() {
         locationsSteps
                 .openLocationPage()
-                .chooseCityWithDropdown()
-                .searchLocationInSearchBar();
+                .chooseCityWithDropdown(Constants.CITY_DATA)
+                .searchLocationInSearchBar(Constants.CITY_LOCATION_DATA);
     }
 }

@@ -7,7 +7,6 @@ import pages.LocationsPage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class LocationsSteps {
     private static final Logger log = LoggerFactory.getLogger(LocationsSteps.class);
@@ -100,22 +99,22 @@ public class LocationsSteps {
     }
 
     // ----------------------- LocationFilterTest ------------------------ \\
-    public LocationsSteps chooseCityWithDropdown() {
+    public LocationsSteps chooseCityWithDropdown(String value) {
         locationsPage.dropdown
                 .click();
         locationsPage.dropdownList
-                .findBy(exactText("VANI"))
+                .findBy(exactText(value))
                 .click();
         return this;
     }
 
-    public LocationsSteps searchLocationInSearchBar() {
+    public LocationsSteps searchLocationInSearchBar(String value) {
                 locationsPage.enableSearchBar
                         .shouldBe(clickable)
                         .click();
                 locationsPage.searchInput
                         .shouldBe(enabled)
-                        .setValue(" #2 Tavisupleba Str. ")
+                        .setValue(value)
                         .pressEnter();
                 return this;
     }
