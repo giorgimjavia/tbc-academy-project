@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Tests Suite" parallel="classes" thread-count="2">
+    <test name="Desktop Suite">
+        <parameter name="device" value="desktop"/>
+        <classes>
+            <class name="tests.FilterOffersTest"/>
+            <class name="tests.LocationFilterTest"/>
+            <class name="tests.LocationTabsTest"/>
+            <class name="tests.ProductDetailsTest"/>
+            <class name="tests.SiteSearchTest"/>
+        </classes>
+    </test>
+    <test name="Mobile Suite">
+        <parameter name="device" value="mobile"/>
+        <classes>
+            <class name="tests.FilterOffersTest"/>
+            <class name="tests.LocationFilterTest"/>
+            <class name="tests.LocationTabsTest"/>
+            <class name="tests.ProductDetailsTest"/>
+            <class name="tests.SiteSearchTest"/>
+        </classes>
+    </test>
+</suite>

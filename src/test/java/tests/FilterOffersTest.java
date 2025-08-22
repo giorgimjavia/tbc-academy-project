@@ -1,6 +1,8 @@
 package tests;
 
+import com.github.dockerjava.api.model.Device;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.AllOffersSteps;
@@ -11,10 +13,13 @@ public class FilterOffersTest extends BaseTest {
     HomeSteps homeSteps;
     OffersSteps offersSteps;
     AllOffersSteps allOffersSteps;
+    private String device;
 
     @BeforeClass
-    public void setUpSteps() {
-        homeSteps = new HomeSteps();
+    @Parameters("device")
+    public void setUpSteps(String device) {
+        this.device = device;
+        homeSteps = new HomeSteps(device);
         offersSteps = new OffersSteps();
         allOffersSteps = new AllOffersSteps();
     }

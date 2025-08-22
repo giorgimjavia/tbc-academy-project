@@ -9,6 +9,15 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class HomeSteps {
     HomePage mainPage = new HomePage();
+    private final String device;
+
+    public HomeSteps(String device) {
+        this.device = device;
+    }
+
+    private boolean isMobile() {
+        return "mobile".equalsIgnoreCase(device);
+    }
 
     public HomeSteps openHomePage() {
         open(Constants.TBC_URL);
@@ -16,17 +25,18 @@ public class HomeSteps {
     }
 
     public HomeSteps openMegaMenuNavbar() {
-        mainPage.megaMenuNavbar
-                .first()
-                .hover();
+        if (isMobile()) {
+            mainPage.hamburgerMenu.shouldBe(visible).click();
+        } else {
+            mainPage.megaMenuNavbar.first().hover();
+        }
         return this;
     }
 
     public HomeSteps navigateToLocationsPage() {
-        mainPage.locationsLink
-                .shouldBe(visible)
-                .shouldHave(exactText(Constants.LOCATIONS_TXT))
-                .click();
+            mainPage.locationsLink.shouldBe(visible)
+                    .shouldHave(exactText(Constants.LOCATIONS_TXT))
+                    .click();
         return this;
     }
 
