@@ -1,15 +1,12 @@
 package steps;
 
 import data.Constants;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pages.LocationsPage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class LocationsSteps {
-    private static final Logger log = LoggerFactory.getLogger(LocationsSteps.class);
     LocationsPage locationsPage = new LocationsPage();
 
     public LocationsSteps openLocationPage() {
