@@ -10,6 +10,7 @@ import steps.HomeSteps;
 public class SiteSearchTest extends BaseTest {
     HomeSteps homeSteps;
 
+
     @BeforeClass
     public void setUpSteps() {
         homeSteps = new HomeSteps();

@@ -9,6 +9,7 @@
             <class name="tests.LocationTabsTest"/>
             <class name="tests.ProductDetailsTest"/>
             <class name="tests.SiteSearchTest"/>
+            <class name="tests.CurrencyConvertorTest"/>
         </classes>
     </test>
     <test name="Mobile Suite">
@@ -19,6 +20,7 @@
             <class name="tests.LocationTabsTest"/>
             <class name="tests.ProductDetailsTest"/>
             <class name="tests.SiteSearchTest"/>
+            <class name="tests.CurrencyConvertorTest"/>
         </classes>
     </test>
 </suite>

@@ -1,5 +1,6 @@
 package steps;
 
+import com.codeborne.selenide.Selenide;
 import data.Constants;
 import pages.HomePage;
 
@@ -8,7 +9,16 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomeSteps {
+//    private final String device;
     HomePage mainPage = new HomePage();
+
+//    public HomeSteps(String device) {
+//        this.device = device;
+//    }
+
+//    private boolean isMobile() {
+//        return "mobile".equalsIgnoreCase(device);
+//    }
 
     public HomeSteps openHomePage() {
         open(Constants.TBC_URL);
@@ -23,8 +33,12 @@ public class HomeSteps {
     }
 
     public HomeSteps openMegaMenuNavbar() {
-        mainPage.hamburgerMenu.click();
+        mainPage.hamburgerMenu.shouldBe(visible).click();
+//        if (isMobile()) {
+//            mainPage.hamburgerMenu.shouldBe(visible).click();
+//        } else {}
 //            mainPage.megaMenuNavbar.first().hover();
+
         return this;
     }
 

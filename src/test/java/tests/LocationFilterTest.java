@@ -12,6 +12,7 @@ public class LocationFilterTest extends BaseTest {
     LocationsSteps locationsSteps;
     HomeSteps homeSteps;
 
+
     @BeforeClass
     public void setUpSteps() {
         locationsSteps = new LocationsSteps();

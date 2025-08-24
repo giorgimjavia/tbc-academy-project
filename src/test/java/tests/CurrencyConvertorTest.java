@@ -2,6 +2,7 @@ package tests;
 
 import data.Constants;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.CurrencyExchangeSteps;

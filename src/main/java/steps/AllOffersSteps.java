@@ -4,24 +4,42 @@ import com.codeborne.selenide.Selenide;
 import pages.AllOffersPage;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 
 
 public class AllOffersSteps {
+//    private final String device;
     AllOffersPage allOffersPage = new AllOffersPage();
 
+//    public AllOffersSteps(String device) {
+//        this.device = device;
+//    }
+//
+//    private boolean isMobile() {
+//        return "mobile".equalsIgnoreCase(device);
+//    }
+
     public AllOffersSteps checkAnyCategoryInOffers() {
-        allOffersPage.mobileFilter.click();
-        Selenide.executeJavaScript(
-                "arguments[0].click();",
-                allOffersPage.offersCheckboxes.first().toWebElement()
-        );
-        allOffersPage.mobileApplyFilter.click();
+                   allOffersPage.mobileFilter.click();
+           Selenide.executeJavaScript(
+                   "arguments[0].click();",
+                   allOffersPage.offersCheckboxes.first().toWebElement()
+           );
+           allOffersPage.mobileApplyFilter.click();
+
+//        if (isMobile()) {
+//            allOffersPage.mobileFilter.click();
+//            Selenide.executeJavaScript(
+//                    "arguments[0].click();",
+//                    allOffersPage.offersCheckboxes.first().toWebElement()
+//            );
+//            allOffersPage.mobileApplyFilter.click();
+//        }
 
 //        allOffersPage.offersCheckboxes
-//                .first()
-//                .shouldBe(clickable)
-//                .click();
+//                    .first()
+//                    .shouldBe(clickable)
+//                    .click();
         return this;
     }
 
@@ -34,12 +52,12 @@ public class AllOffersSteps {
     }
 
     public AllOffersSteps uncheckSelectedCategory() {
-        allOffersPage.mobileFilter.click();
+        allOffersPage.mobileFilter.shouldBe(visible).click();
         Selenide.executeJavaScript(
                 "arguments[0].click();",
                 allOffersPage.offersCheckboxes.first().toWebElement()
         );
-        allOffersPage.mobileApplyFilter.click();
+        allOffersPage.mobileApplyFilter.shouldBe(visible).click();
 
 //        allOffersPage.offersCheckboxes
 //                .first()
