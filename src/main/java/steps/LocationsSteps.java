@@ -96,6 +96,8 @@ public class LocationsSteps {
     }
 
     // ----------------------- LocationFilterTest ------------------------ \\
+//  This is actually a bug in mobile responsiveness, because at mobile resolution
+//  the dropdown menu disappears, making it impossible to select a city
     public LocationsSteps chooseCityWithDropdown(String value) {
         locationsPage.dropdown
                 .click();

@@ -1,9 +1,9 @@
 package steps;
 
+import com.codeborne.selenide.Selenide;
 import pages.AllOffersPage;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.clickable;
 import static com.codeborne.selenide.Condition.visible;
 
 
@@ -11,10 +11,17 @@ public class AllOffersSteps {
     AllOffersPage allOffersPage = new AllOffersPage();
 
     public AllOffersSteps checkAnyCategoryInOffers() {
-        allOffersPage.offersCheckboxes
-                .first()
-                .shouldBe(clickable)
-                .click();
+        allOffersPage.mobileFilter.click();
+        Selenide.executeJavaScript(
+                "arguments[0].click();",
+                allOffersPage.offersCheckboxes.first().toWebElement()
+        );
+        allOffersPage.mobileApplyFilter.click();
+
+//        allOffersPage.offersCheckboxes
+//                .first()
+//                .shouldBe(clickable)
+//                .click();
         return this;
     }
 
@@ -27,9 +34,16 @@ public class AllOffersSteps {
     }
 
     public AllOffersSteps uncheckSelectedCategory() {
-        allOffersPage.offersCheckboxes
-                .first()
-                .click();
+        allOffersPage.mobileFilter.click();
+        Selenide.executeJavaScript(
+                "arguments[0].click();",
+                allOffersPage.offersCheckboxes.first().toWebElement()
+        );
+        allOffersPage.mobileApplyFilter.click();
+
+//        allOffersPage.offersCheckboxes
+//                .first()
+//                .click();
         return this;
     }
 }

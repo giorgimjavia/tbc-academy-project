@@ -9,29 +9,25 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class HomeSteps {
     HomePage mainPage = new HomePage();
-    private final String device;
-
-    public HomeSteps(String device) {
-        this.device = device;
-    }
-
-    private boolean isMobile() {
-        return "mobile".equalsIgnoreCase(device);
-    }
 
     public HomeSteps openHomePage() {
         open(Constants.TBC_URL);
         return this;
     }
 
-    public HomeSteps openMegaMenuNavbar() {
-        if (isMobile()) {
-            mainPage.hamburgerMenu.shouldBe(visible).click();
-        } else {
-            mainPage.megaMenuNavbar.first().hover();
-        }
+    public HomeSteps rejectCookies() {
+        mainPage.rejectCookies
+                .shouldBe(visible)
+                .click();
         return this;
     }
+
+    public HomeSteps openMegaMenuNavbar() {
+        mainPage.hamburgerMenu.click();
+//            mainPage.megaMenuNavbar.first().hover();
+        return this;
+    }
+
 
     public HomeSteps navigateToLocationsPage() {
             mainPage.locationsLink.shouldBe(visible)
@@ -45,6 +41,14 @@ public class HomeSteps {
         mainPage.offersLink
                 .shouldBe(visible)
                 .shouldHave(exactText(Constants.OFFERS_TXT))
+                .click();
+        return this;
+    }
+
+    public HomeSteps navigateToCurrencyExchangePage() {
+        mainPage.currencyExchangeLink
+                .shouldBe(visible)
+                .shouldBe(exactText("Currency Exchange"))
                 .click();
         return this;
     }

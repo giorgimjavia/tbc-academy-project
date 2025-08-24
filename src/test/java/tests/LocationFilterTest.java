@@ -11,20 +11,18 @@ import steps.LocationsSteps;
 public class LocationFilterTest extends BaseTest {
     LocationsSteps locationsSteps;
     HomeSteps homeSteps;
-    private String device;
 
     @BeforeClass
-    @Parameters("device")
-    public void setUpSteps(String device) {
-        this.device = device;
+    public void setUpSteps() {
         locationsSteps = new LocationsSteps();
-        homeSteps = new HomeSteps(device);
+        homeSteps = new HomeSteps();
     }
 
     @Test
     public void varifyLocationFilterTest() {
         homeSteps
                 .openHomePage()
+                .rejectCookies()
                 .openMegaMenuNavbar()
                 .navigateToLocationsPage();
         locationsSteps

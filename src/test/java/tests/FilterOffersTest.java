@@ -13,13 +13,10 @@ public class FilterOffersTest extends BaseTest {
     HomeSteps homeSteps;
     OffersSteps offersSteps;
     AllOffersSteps allOffersSteps;
-    private String device;
 
     @BeforeClass
-    @Parameters("device")
-    public void setUpSteps(String device) {
-        this.device = device;
-        homeSteps = new HomeSteps(device);
+    public void setUpSteps() {
+        homeSteps = new HomeSteps();
         offersSteps = new OffersSteps();
         allOffersSteps = new AllOffersSteps();
     }
@@ -28,6 +25,7 @@ public class FilterOffersTest extends BaseTest {
     public void FilterAndResetOffersTest() {
         homeSteps
                 .openHomePage()
+                .rejectCookies()
                 .openMegaMenuNavbar()
                 .navigateToOffersPage();
         offersSteps

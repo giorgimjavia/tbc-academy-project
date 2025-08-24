@@ -9,19 +9,17 @@ import steps.HomeSteps;
 
 public class SiteSearchTest extends BaseTest {
     HomeSteps homeSteps;
-    private String device;
 
     @BeforeClass
-    @Parameters("device")
-    public void setUpSteps(String device) {
-        this.device = device;
-        homeSteps = new HomeSteps(device);
+    public void setUpSteps() {
+        homeSteps = new HomeSteps();
     }
 
     @Test
     public void siteSearchingByKeyword() {
         homeSteps
                 .openHomePage()
+                .rejectCookies()
                 .clickSearchButton()
                 .fillSearchBar(Constants.SEARCH_DATA)
                 .validateListResults()

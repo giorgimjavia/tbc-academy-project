@@ -12,4 +12,7 @@ public class Constants {
     public static final String LOCATIONS_TXT = "Locations";
     public static final String OFFERS_TXT = "Offers";
     public static final String READ_MORE_TXT = "Read more";
+    public static final String FIRST_CURRENCY_DATA = "EUR";
+    public static final String SECOND_CURRENCY_DATA = "GBP";
+    public static final String AMOUNT_DATA = "25.38";
 }
