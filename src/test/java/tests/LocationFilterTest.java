@@ -26,7 +26,6 @@ public class LocationFilterTest extends BaseTest {
                 .openMegaMenuNavbar()
                 .navigateToLocationsPage();
         locationsSteps
-                .openLocationPage()
                 .chooseCityWithDropdown(Constants.CITY_DATA)
                 .searchLocationInSearchBar(Constants.CITY_LOCATION_DATA);
     }

@@ -2,10 +2,12 @@ package steps;
 
 import data.Constants;
 import pages.HomePage;
+
 import utils.Config;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
 public class HomeSteps {
@@ -50,11 +52,12 @@ public class HomeSteps {
     public HomeSteps navigateToCurrencyExchangePage() {
         mainPage.currencyExchangeLink
                 .shouldBe(visible)
-                .shouldBe(exactText("Currency Exchange"))
+                .shouldBe(exactText(Constants.CURRENCY_EXCHANGE_TXT))
                 .click();
         return this;
     }
 
+    // ----------------------- SiteSearchTest ------------------------ \\
     public HomeSteps clickSearchButton() {
         mainPage.searchBtn
                 .shouldBe(clickable)
@@ -113,6 +116,28 @@ public class HomeSteps {
         mainPage.productBlankButton
                 .shouldBe(clickable)
                 .click();
+        return this;
+    }
+
+    // ----------------------- ChatbotInteractionTest ------------------------ \\
+    public HomeSteps openQuickAction() {
+        mainPage.quickActionBtn
+                .shouldBe(visible)
+                .click();
+        return this;
+    }
+
+    public HomeSteps openChatBot() {
+        mainPage.chatbotBtn
+                .shouldBe(visible)
+                .click();
+        return this;
+    }
+
+    public HomeSteps sendMessageToChatbot() {
+        mainPage.chatbotInput
+                .setValue("Hi")
+                .pressEnter();
         return this;
     }
 }

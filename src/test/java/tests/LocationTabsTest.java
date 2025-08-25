@@ -24,7 +24,6 @@ public class LocationTabsTest extends BaseTest {
                 .openMegaMenuNavbar()
                 .navigateToLocationsPage();
         locationsSteps
-                .openLocationPage()
                 .selectAtmsTab()
                 .selectATMsSubTab24_7()
                 .unSelectATMsSubTab24_7()

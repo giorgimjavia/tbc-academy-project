@@ -4,20 +4,15 @@ import data.Constants;
 import pages.LocationsPage;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.open;
 
 public class LocationsSteps {
     LocationsPage locationsPage = new LocationsPage();
 
-    public LocationsSteps openLocationPage() {
-        open(Constants.TBC_LOCATIONS_URL);
-        return this;
-    }
 
     // ----------------------- LocationTabsTest ------------------------ \\
     public LocationsSteps selectAtmsTab() {
         locationsPage.tabs
-                .findBy(text("ATMs"))
+                .findBy(text(Constants.ATMS_TXT))
                 .should(appear)
                 .click();
     return this;
@@ -25,7 +20,7 @@ public class LocationsSteps {
 
     public LocationsSteps selectATMsSubTab24_7() {
         locationsPage.subTabs
-                .findBy(text("24/7"))
+                .findBy(text(Constants.TWENTY_FOUR_SEVEN_TX))
                 .should(appear)
                 .click();
         return this;
@@ -33,7 +28,7 @@ public class LocationsSteps {
 
     public LocationsSteps unSelectATMsSubTab24_7() {
         locationsPage.subTabs
-                .findBy(text("24/7"))
+                .findBy(text(Constants.TWENTY_FOUR_SEVEN_TX))
                 .should(appear)
                 .click();
         return this;
@@ -41,7 +36,7 @@ public class LocationsSteps {
 
     public LocationsSteps selectATMsSubTabOpenNow() {
         locationsPage.subTabs
-                .findBy(text("Open Now"))
+                .findBy(text(Constants.OPEN_NOW_TXT))
                 .should(appear)
                 .click();
         return this;
@@ -49,7 +44,7 @@ public class LocationsSteps {
 
     public LocationsSteps unSelectATMsSubTabOpenNow() {
         locationsPage.subTabs
-                .findBy(text("Open Now"))
+                .findBy(text(Constants.OPEN_NOW_TXT))
                 .should(appear)
                 .click();
         return this;
@@ -57,7 +52,7 @@ public class LocationsSteps {
 
     public LocationsSteps selectBranchesTab() {
         locationsPage.tabs
-                .findBy(text("Branches"))
+                .findBy(text(Constants.BRANCHES_TXT))
                 .should(appear)
                 .click();
         return this;
@@ -65,7 +60,7 @@ public class LocationsSteps {
 
     public LocationsSteps selectBranchesSubTab24_7() {
         locationsPage.subTabs
-                .findBy(text("24/7"))
+                .findBy(text(Constants.TWENTY_FOUR_SEVEN_TX))
                 .should(appear)
                 .click();
         return this;
@@ -73,7 +68,7 @@ public class LocationsSteps {
 
     public LocationsSteps unSelectBranchesSubTab24_7() {
         locationsPage.subTabs
-                .findBy(text("24/7"))
+                .findBy(text(Constants.TWENTY_FOUR_SEVEN_TX))
                 .should(appear)
                 .click();
         return this;
@@ -81,7 +76,7 @@ public class LocationsSteps {
 
     public LocationsSteps selectBranchesSubTabOpenNow() {
         locationsPage.subTabs
-                .findBy(text("Open Now"))
+                .findBy(text(Constants.OPEN_NOW_TXT))
                 .should(appear)
                 .click();
         return this;
@@ -89,14 +84,14 @@ public class LocationsSteps {
 
     public LocationsSteps unSelectBranchesSubTabOpenNow() {
         locationsPage.subTabs
-                .findBy(text("Open Now"))
+                .findBy(text(Constants.OPEN_NOW_TXT))
                 .should(appear)
                 .click();
         return this;
     }
 
     // ----------------------- LocationFilterTest ------------------------ \\
-//  This is actually a bug in mobile responsiveness, because at mobile resolution
+//  This step fails. it's actually a bug in mobile responsive, because at mobile resolution
 //  the dropdown menu disappears, making it impossible to select a city
     public LocationsSteps chooseCityWithDropdown(String value) {
         locationsPage.dropdown

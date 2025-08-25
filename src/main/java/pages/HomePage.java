@@ -16,7 +16,10 @@ public class HomePage {
             hamburgerMenu = $x("//button[contains(@class, 'hamburger-menu')]"),
             productBlank = $x("//a[contains(@href, 'tbcconcept') and @target='_blank']"),
             productBlankButton = $x("//a[contains(@href, 'tbcconcept') and @target='_blank']//button[text() ='Read more']"),
-            rejectCookies = $x("//button[text() = ' Reject All ']");
+            rejectCookies = $x("//button[text() = ' Reject All ']"),
+            quickActionBtn = $x("//div[@class = 'quick-action-item']//button[contains(@class, 'primary')]"),
+            chatbotBtn = $x("//div[@class ='quick-action-item']//button[contains(@class, 'secondary')]"),
+            chatbotInput = $("textarea#composer-input");
 
     public ElementsCollection
             resultsList = $$(".search-result-item__title"),
