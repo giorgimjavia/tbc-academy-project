@@ -1,7 +1,6 @@
 package tests;
 
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.HomeSteps;
@@ -14,7 +13,7 @@ public class ProductDetailsTest extends BaseTest {
         homeSteps = new HomeSteps();
     }
 
-    @Test
+    @Test()
     public void verifyProductsButtonAndBlank() {
         homeSteps
                 .openHomePage()

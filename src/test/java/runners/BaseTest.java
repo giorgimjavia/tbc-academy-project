@@ -1,19 +1,29 @@
 package runners;
 
 import com.codeborne.selenide.Configuration;
-import data.Constants;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
+import utils.Config;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
     @BeforeClass
-    public void setUp() {
+    @Parameters("device")
+    public void setUp(@Optional("mobile") String device) {
         Configuration.browser = "chrome";
-        Configuration.timeout = 10000;
-        Configuration.holdBrowserOpen = true;
-        Configuration.browserSize = "384x824";
+        Configuration.timeout = 20000;
+        if ("desktop".equalsIgnoreCase(device)) {
+            Config.setMobileDevice(false);
+            Configuration.browserSize = "1920x1080";
+        } else {
+            Config.setMobileDevice(true);
+            Configuration.browserSize = "384x824";
+        }
     }
+
+    @AfterClass
+    public void tearDown() {
+        closeWebDriver();
+    }
+
 }

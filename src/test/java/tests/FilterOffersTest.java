@@ -1,8 +1,6 @@
 package tests;
 
-import com.github.dockerjava.api.model.Device;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.AllOffersSteps;
@@ -21,7 +19,7 @@ public class FilterOffersTest extends BaseTest {
         allOffersSteps = new AllOffersSteps();
     }
 
-    @Test
+    @Test()
     public void FilterAndResetOffersTest() {
         homeSteps
                 .openHomePage()

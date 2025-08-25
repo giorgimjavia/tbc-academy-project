@@ -12,13 +12,14 @@ public class CurrencyConvertorTest extends BaseTest {
     CurrencyExchangeSteps currencyExchangeSteps;
     HomeSteps homeSteps;
 
+
     @BeforeClass
     public void setUpSteps() {
         currencyExchangeSteps = new CurrencyExchangeSteps();
         homeSteps = new HomeSteps();
     }
 
-    @Test
+    @Test()
     public void currencyExchangeTest() {
         homeSteps
                 .openHomePage()

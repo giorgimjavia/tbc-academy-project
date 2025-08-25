@@ -2,7 +2,6 @@ package tests;
 
 import data.Constants;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.HomeSteps;
@@ -16,7 +15,7 @@ public class SiteSearchTest extends BaseTest {
         homeSteps = new HomeSteps();
     }
 
-    @Test
+    @Test()
     public void siteSearchingByKeyword() {
         homeSteps
                 .openHomePage()
