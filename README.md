@@ -16,7 +16,7 @@ It leverages **Java** and **Selenide** for browser automation and supports **par
 You can clone the repository using the following command:
 
 ```bash
-https://github.com/giorgimjavia/tbc-academy-project.git
+git clone https://github.com/giorgimjavia/tbc-academy-project.git
 
 
 
