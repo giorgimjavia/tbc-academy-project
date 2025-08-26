@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import runners.BaseTest;
 import steps.HomeSteps;
 
+@Test(groups = {"[Verify product details page displays key CTA and external links correctly (MSP-T5)]"})
 public class ProductDetailsTest extends BaseTest {
     HomeSteps homeSteps;
 
@@ -14,7 +15,7 @@ public class ProductDetailsTest extends BaseTest {
     }
 
     @Test()
-    public void verifyProductsButtonAndBlank() {
+    public void productsButtonAndVisibilityTest() {
         homeSteps
                 .openHomePage()
                 .rejectCookies()

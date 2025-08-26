@@ -6,6 +6,7 @@ import runners.BaseTest;
 import steps.HomeSteps;
 import steps.LocationsSteps;
 
+@Test(groups = {"[Verify branch/ATM tab navigation and service sub-tab filtering (24/7, Open Now) (MSP-T1)]"})
 public class LocationTabsTest extends BaseTest {
     LocationsSteps locationsSteps;
     HomeSteps homeSteps;
@@ -17,7 +18,7 @@ public class LocationTabsTest extends BaseTest {
     }
 
     @Test()
-    public void varifyLocationsTabTest() {
+    public void locationsTabAndSubtabsTest() {
         homeSteps
                 .openHomePage()
                 .rejectCookies()

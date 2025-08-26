@@ -20,4 +20,6 @@ public class Constants {
     public static final String BRANCHES_TXT = "Branches";
     public static final String TWENTY_FOUR_SEVEN_TX = "24/7";
     public static final String OPEN_NOW_TXT = "Open Now";
+    public static final String CHATBOT_MESSAGE = "Hello, Can you help me?";
+    public static final String FILE_LOCATION = "C:\\Users\\User\\IdeaProjects\\tbc-academy-project\\src\\main\\java\\resources\\document.docx";
 }

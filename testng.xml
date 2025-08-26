@@ -10,6 +10,7 @@
             <class name="tests.ProductDetailsTest"/>
             <class name="tests.SiteSearchTest"/>
             <class name="tests.CurrencyConvertorTest"/>
+            <class name="tests.ChatbotInteractionTest"/>
         </classes>
     </test>
     <test name="Mobile Suite">
@@ -21,6 +22,7 @@
             <class name="tests.ProductDetailsTest"/>
             <class name="tests.SiteSearchTest"/>
             <class name="tests.CurrencyConvertorTest"/>
+            <class name="tests.ChatbotInteractionTest"/>
         </classes>
     </test>
 </suite>

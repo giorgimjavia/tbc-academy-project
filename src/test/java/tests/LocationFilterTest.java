@@ -7,6 +7,7 @@ import runners.BaseTest;
 import steps.HomeSteps;
 import steps.LocationsSteps;
 
+@Test(groups = {"[Verify location filter updates map and list with correct details (MSP-T2)]"})
 public class LocationFilterTest extends BaseTest {
     LocationsSteps locationsSteps;
     HomeSteps homeSteps;
@@ -19,7 +20,7 @@ public class LocationFilterTest extends BaseTest {
     }
 
     @Test()
-    public void varifyLocationFilterTest() {
+    public void validateCityAndLocationFilterTest() {
         homeSteps
                 .openHomePage()
                 .rejectCookies()

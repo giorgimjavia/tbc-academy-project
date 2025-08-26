@@ -19,10 +19,14 @@ public class HomePage {
             rejectCookies = $x("//button[text() = ' Reject All ']"),
             quickActionBtn = $x("//div[@class = 'quick-action-item']//button[contains(@class, 'primary')]"),
             chatbotBtn = $x("//div[@class ='quick-action-item']//button[contains(@class, 'secondary')]"),
-            chatbotInput = $("textarea#composer-input");
+            chatbotInput = $("#composer-input"),
+            chatbotIFrame = $x("//iframe[@name ='Messaging window']"),
+            uploadFileInput = $("input[type='file']"),
+            closeChatbotBtn = $x("//button[@aria-label ='Close']");
 
     public ElementsCollection
             resultsList = $$(".search-result-item__title"),
+            resultListsBtn = $$x("//h3[@class ='search-result-item__title']//following-sibling::tbcx-pw-button"),
             megaMenuNavbar = $$x("//div[contains(@class, 'navigation-item__link')]");
 
 }

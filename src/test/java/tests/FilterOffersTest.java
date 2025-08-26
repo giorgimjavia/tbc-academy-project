@@ -7,6 +7,7 @@ import steps.AllOffersSteps;
 import steps.HomeSteps;
 import steps.OffersSteps;
 
+@Test(groups = {"[Verify filtering and resetting resulted offers  (MSP-T4)]"})
 public class FilterOffersTest extends BaseTest {
     HomeSteps homeSteps;
     OffersSteps offersSteps;
@@ -20,7 +21,7 @@ public class FilterOffersTest extends BaseTest {
     }
 
     @Test()
-    public void FilterAndResetOffersTest() {
+    public void filterAndResetResultedOffersTest() {
         homeSteps
                 .openHomePage()
                 .rejectCookies()

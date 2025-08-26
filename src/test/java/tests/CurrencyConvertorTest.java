@@ -7,6 +7,7 @@ import runners.BaseTest;
 import steps.CurrencyExchangeSteps;
 import steps.HomeSteps;
 
+@Test(groups = {"[Verify currency exchange page displays accurate rates and conversions (MSP-T6)]"})
 public class CurrencyConvertorTest extends BaseTest {
     CurrencyExchangeSteps currencyExchangeSteps;
     HomeSteps homeSteps;
@@ -19,7 +20,7 @@ public class CurrencyConvertorTest extends BaseTest {
     }
 
     @Test()
-    public void currencyExchangeTest() {
+    public void validateCurrencyExchangeTest() {
         homeSteps
                 .openHomePage()
                 .rejectCookies()

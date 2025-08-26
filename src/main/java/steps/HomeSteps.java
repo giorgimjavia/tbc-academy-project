@@ -1,14 +1,16 @@
 package steps;
 
 import data.Constants;
+import org.openqa.selenium.Keys;
 import pages.HomePage;
 
 import utils.Config;
 
+import java.io.File;
+
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class HomeSteps {
     HomePage mainPage = new HomePage();
@@ -65,6 +67,24 @@ public class HomeSteps {
         return this;
     }
 
+    public HomeSteps fillNonValidDataInSearch(String value) {
+        mainPage.searchBar
+            .setValue(value);
+        return this;
+    }
+
+    public HomeSteps validateEmptyResults() {
+        mainPage.emptyResult
+                .shouldHave(text(Constants.EMPTY_RESULT_MESSAGE));
+        return this;
+    }
+
+    public HomeSteps clearSearchInput() {
+        mainPage.searchBar
+                .clear();
+        return this;
+    }
+
     public HomeSteps fillSearchBar(String value) {
         mainPage.searchBar
                 .shouldBe(enabled)
@@ -80,23 +100,15 @@ public class HomeSteps {
         return this;
     }
 
-    public HomeSteps clearSearchInput() {
-        mainPage.searchBar
-                .clear();
+    public HomeSteps NavigateToResultedPage() {
+        mainPage.resultListsBtn
+                .shouldHave(sizeGreaterThan(0));
+        mainPage.resultListsBtn
+                .first()
+                .click();
         return this;
     }
 
-    public HomeSteps fillNonValidDataInSearch(String value) {
-        mainPage.searchBar
-                .setValue(value);
-        return this;
-    }
-
-    public HomeSteps validateEmptyResults() {
-        mainPage.emptyResult
-                .shouldHave(text(Constants.EMPTY_RESULT_MESSAGE));
-        return this;
-    }
 
 
     // ----------------------- ProductDetailsTest ------------------------ \\
@@ -134,10 +146,26 @@ public class HomeSteps {
         return this;
     }
 
-    public HomeSteps sendMessageToChatbot() {
+    public HomeSteps sendMessageToChatbot(String value) {
+        mainPage.chatbotIFrame
+                .should(appear);
+        switchTo().frame(mainPage.chatbotIFrame);
         mainPage.chatbotInput
-                .setValue("Hi")
-                .pressEnter();
+                .shouldBe(enabled)
+                .sendKeys(value, Keys.ENTER);
+        return this;
+    }
+
+    public HomeSteps uploadingFile(File file) {
+        mainPage.uploadFileInput
+                .uploadFile(file);
+        return this;
+    }
+
+    public HomeSteps closeChatbot() {
+        mainPage.closeChatbotBtn
+                .shouldBe(visible)
+                .click();
         return this;
     }
 }

@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class CurrencyExchangePage {
     public SelenideElement
             firstInput = $("#tbcx-text-input-1"),
-            secondInput = $("#tbcx-text-input-2"),
             swapIcon = $x("//div[contains(@class, 'swap')]");
 
     public ElementsCollection
