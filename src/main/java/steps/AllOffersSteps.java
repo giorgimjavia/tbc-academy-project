@@ -21,7 +21,6 @@ public class AllOffersSteps {
             );
             allOffersPage.mobileApplyFilter.click();
         } else {
-            // Desktop flow
             allOffersPage.offersCheckboxes
                     .first()
                     .shouldBe(clickable)
